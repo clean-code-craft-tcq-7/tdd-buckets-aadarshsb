@@ -19,9 +19,9 @@ class FileIO
       }
       else
       {
-        fp = f.open("log.csv","rw");
+        fp = fopen("log.csv","rw");
         printf("File created Successfully");
-        fputs("Range  Readings \n",this.fp);
+        fputs("Range  Readings \n",fp);
       }
     }
   
@@ -30,11 +30,13 @@ class FileIO
       fclose(fp);
     }
     
-    void WriteDataToLine(const char& SeqStartEnd_t,const unsigned int count) const
+    void WriteDataToLine(SeqStartEnd_t& SeqStarEnd,const unsigned int count) const
     {
-      std::array<std::string, 20> Range = {"\0"};
-      std::array<std::string, 8> Reading = {"\0"};
-      sprintf(Range,"%d - %d",SeqStartEnd_t.start, SeqStartEnd_t.end);
+      char Range[20]={"\0"};
+      char Reading[8]={"\0"};
+      //std::array<std::string, 20> Range = {"\0"};
+      //std::array<std::string, 8> Reading = {"\0"};
+      sprintf(Range,"%d - %d",SeqStarEnd.start, SeqStarEnd.end);
       fputs(Range,fp);
       sprintf(Reading,"%d\n",count);
       fputs(Reading,fp);
