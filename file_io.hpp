@@ -1,6 +1,8 @@
 #ifndef FILE_IO_HPP
 #define FILE_IO_HPP
 
+using namespace std;
+
 class FileIO
 {
   private:
@@ -40,6 +42,6 @@ class FileIO
       fclose(this.fp);
       this.fp = NULL;
     }
-}
+};
 
 #endif
