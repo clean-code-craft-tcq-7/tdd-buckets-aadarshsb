@@ -14,11 +14,11 @@ jobs:
       run: pip install lizard
 
     - name: Limit complexity
-      run: $HOME/.local/bin/lizard --CCN 30
+      run: $HOME/.local/bin/lizard --CCN 4
 
     - name: Check size
       run: |
-        $HOME/.local/bin/lizard | bash .github/workflows/check_ccn.sh 50
+        $HOME/.local/bin/lizard | bash .github/workflows/check_ccn.sh 100
         
     - name: compile the code 
       run: g++ -Wall -Wextra -o tdd_buckets *.c*
