@@ -1,0 +1,4 @@
+#ifndef CHECK_SEQUENCE_HPP
+#define CHECK_SEQUENCE_HPP
+
+#endif 
