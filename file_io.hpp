@@ -1,3 +1,6 @@
+#ifndef FILE_IO_HPP
+#define FILE_IO_HPP
+
 class FileIO
 {
   private:
@@ -38,3 +41,5 @@ class FileIO
       this.fp = NULL;
     }
 }
+
+#endif
