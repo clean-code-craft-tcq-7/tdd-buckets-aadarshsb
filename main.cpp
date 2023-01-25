@@ -3,8 +3,12 @@
 
 int main(void)
 {
-  FileIO F1;
-  F1. CloseFile();
+  FILE *fp;
+  if(!FileIO::ValFPAndCreateCSVFile(fp))
+  {
+    printf("Unable to create a file pointer \n");
+    return 0;
+  }
   
   return 0;
 }
