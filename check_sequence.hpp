@@ -2,6 +2,7 @@
 #define CHECK_SEQUENCE_HPP
 
 #include <array>
+#include <bits/stdc++.h>
 
 const unsigned int MaximumArraySize = 40U;
 
@@ -43,7 +44,7 @@ class CCheckSeq
       unsigned int StartRange = 0U;
       unsigned int EndRange = 0U;
       unsigned int Counts = 0U;
-      std::qsort(this->ChargeArray.begin(),this->ChargeArray.end());
+      std::sort(this->ChargeArray.begin(),this->ChargeArray.end());
       StartRange = this->ChargeArray[0];
       for(unsigned int Index = 0; Index < this->MaxArraySize-1; Index++)
       {
