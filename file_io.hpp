@@ -17,15 +17,14 @@ class FileIO
   public:
     static bool ValFPAndCreateCSVFile(FILE *fp)
     {
-      if(fp == NULL)
+      if(fp = fopen("log.csv","rw") == NULL)
       {
-        printf("File pointer can't be created");
+        printf("File pointer can't be created \n");
         return 0;
       }
       else
       {
-        fp = fopen("log.csv","rw");
-        printf("File created Successfully");
+        printf("File created Successfully \n");
         fputs("Range  Readings \n",fp);
         return 1;
       }
