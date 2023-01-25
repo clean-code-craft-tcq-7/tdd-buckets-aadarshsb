@@ -3,7 +3,7 @@
 
 int main(void)
 {
-  FILE *fp;
+  FILE *fp = NULL;
   if(!FileIO::ValFPAndCreateCSVFile(fp))
   {
     printf("Unable to create a file pointer \n");
