@@ -39,7 +39,7 @@ class CCheckSeq
         }
       }
     }
-    void FindSeqences(void) 
+    void FindSeqencesAndLog(FILE* fp) 
     {
       unsigned int StartRange = 0U;
       unsigned int EndRange = 0U;
@@ -51,10 +51,14 @@ class CCheckSeq
         Counts++;
         if(ChargeArray[Index + 1] >= ChargeArray[Index] + 2)
         {
+          SeqStartEnd_t SeqStartEnd = {0};
           EndRange = this->ChargeArray[Index];
+          SeqStartEnd.start = StartRange;
+          StartRange.end = EndRange;
           //Call the file IO operation 
+          FileIO::WriteDataToLine(fp, &StartRange, Counts);
           
-          Counts = 0; 
+          Counts = 0U; 
           StartRange = this->ChargeArray[Index + 1];
         }
       }
