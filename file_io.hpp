@@ -10,8 +10,12 @@ using namespace std;
 class FileIO
 {
   private:
+    static void CreateNewFile(FILE* fp)
+    {
+      
+    }
   public:
-    static bool ValFPAndCreateCSVFile(const FILE *fp) const
+    static bool ValFPAndCreateCSVFile(FILE *fp)
     {
       if(fp == NULL)
       {
@@ -26,11 +30,11 @@ class FileIO
         return 1;
       }
     }
-    static void CloseFile(FILE *fp) const
+    static void CloseFile(FILE *fp)
     {
       fclose(fp);
     }
-    static void WriteDataToLine(FILE* fp,const CCheckSeq::SeqStartEnd_t& SeqStarEnd,const unsigned int count) const
+    static void WriteDataToLine(FILE* fp,const CCheckSeq::SeqStartEnd_t& SeqStarEnd,const unsigned int count)
     {
       char Range[20]={"\0"};
       char Reading[8]={"\0"};
