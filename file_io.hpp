@@ -3,6 +3,7 @@
 
 #include<array>
 #include<string>
+#include "check_sequence.hpp"
 
 using namespace std;
 
@@ -30,7 +31,7 @@ class FileIO
       fclose(fp);
     }
     
-    void WriteDataToLine(SeqStartEnd_t& SeqStarEnd,const unsigned int count) const
+    void WriteDataToLine(const SeqStartEnd_t& SeqStarEnd,const unsigned int count) const
     {
       char Range[20]={"\0"};
       char Reading[8]={"\0"};
