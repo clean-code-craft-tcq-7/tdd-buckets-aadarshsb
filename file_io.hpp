@@ -10,28 +10,27 @@ using namespace std;
 class FileIO
 {
   private:
-    FILE *fp;
   public:
-    FileIO()
+    static bool ValFPAndCreateCSVFile(const FILE *fp) const
     {
       if(fp == NULL)
       {
         printf("File pointer can't be created");
+        return 0;
       }
       else
       {
         fp = fopen("log.csv","rw");
         printf("File created Successfully");
         fputs("Range  Readings \n",fp);
+        return 1;
       }
     }
-  
-    void CloseFile(void) const
+    static void CloseFile(FILE *fp) const
     {
       fclose(fp);
     }
-    
-    void WriteDataToLine(CCheckSeq::SeqStartEnd_t& SeqStarEnd,const unsigned int count) const
+    static void WriteDataToLine(FILE* fp,const CCheckSeq::SeqStartEnd_t& SeqStarEnd,const unsigned int count) const
     {
       char Range[20]={"\0"};
       char Reading[8]={"\0"};
@@ -41,12 +40,6 @@ class FileIO
       fputs(Range,fp);
       sprintf(Reading,"%d\n",count);
       fputs(Reading,fp);
-    }
-    
-    ~FileIO()
-    {
-      fclose(fp);
-      fp = NULL;
     }
 };
 
