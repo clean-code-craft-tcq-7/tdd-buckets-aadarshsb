@@ -10,14 +10,10 @@ using namespace std;
 class FileIO
 {
   private:
-    static void CreateNewFile(FILE* fp)
-    {
-      
-    }
   public:
     static bool ValFPAndCreateCSVFile(FILE *fp)
     {
-      fp = fopen("log.csv","rw"); 
+      fp = fopen("log.csv","w+t"); 
       if(fp== NULL)
       {
         printf("File pointer can't be created \n");
