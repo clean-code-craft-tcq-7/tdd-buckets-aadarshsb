@@ -31,7 +31,7 @@ class FileIO
       fclose(fp);
     }
     
-    void WriteDataToLine(SeqStartEnd_t& SeqStarEnd,const unsigned int count) const
+    void WriteDataToLine(CCheckSeq::SeqStartEnd_t& SeqStarEnd,const unsigned int count) const
     {
       char Range[20]={"\0"};
       char Reading[8]={"\0"};
