@@ -43,7 +43,7 @@ class FileIO
     }
 };
 
-class FileIOStub:private FileIO
+class FileIOStub: private FileIO
 {
   private:
   public:
