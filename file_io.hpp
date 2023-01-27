@@ -47,16 +47,16 @@ class FileIOStub: private FileIO
 {
   private:
   public:
-    virtual bool ValFPAndCreateCSVFile(FILE *fp) override
+    virtual bool ValFPAndCreateCSVFile(FILE *fp)
     {
       assert(fp != NULL); 
     }
-    virtual void CloseFile(FILE *fp) override
+    virtual void CloseFile(FILE *fp)
     {
       //Dummy Stub
       assert(fp != NULL);
     }
-    virtual void WriteDataToLine(FILE* fp,const CCheckSeq::SeqStartEnd_t& SeqStarEnd,const unsigned int count) override
+    virtual void WriteDataToLine(FILE* fp,const CCheckSeq::SeqStartEnd_t& SeqStarEnd,const unsigned int count)
     {
       //Dummy stub
       assert(TRUE);
