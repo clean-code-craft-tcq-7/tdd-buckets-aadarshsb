@@ -56,10 +56,10 @@ class FileIOStub: private FileIO
       //Dummy Stub
       assert(fp != NULL);
     }
-    virtual void WriteDataToLine(FILE* fp,const CCheckSeq::SeqStartEnd_t& SeqStarEnd,const unsigned int count)
+    virtual void WriteDataToLine(void)
     {
       //Dummy stub
-      assert(TRUE);
+      assert(1);
     }
 };
 
