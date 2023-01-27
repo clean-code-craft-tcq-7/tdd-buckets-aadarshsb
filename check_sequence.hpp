@@ -4,6 +4,7 @@
 #include <array>
 #include <bits/stdc++.h>
 #include "file_io.hpp"
+#include "testfile.hpp"
 
 const unsigned int MaximumArraySize = 40U;
 
