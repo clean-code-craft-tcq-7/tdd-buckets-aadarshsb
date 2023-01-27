@@ -2,6 +2,7 @@
 #define TESTFILE_HPP
 
 #include "file_io.hpp"
+#include "check_sequence.hpp"
 #include <assert.h>
 
 class FileIOStub:class FileIO
