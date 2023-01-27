@@ -5,7 +5,7 @@
 #include "check_sequence.hpp"
 #include <assert.h>
 
-class FileIOStub:class FileIO
+class FileIOStub:private FileIO
 {
   private:
   public:
