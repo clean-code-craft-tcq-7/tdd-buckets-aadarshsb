@@ -57,7 +57,7 @@ class CCheckSeq
           SeqStartEnd.start = StartRange;
           StartRange.end = EndRange;
           //Call the file IO operation 
-          FileIO::WriteDataToLine(fp, &StartRange, Counts);
+          FileIOStub::WriteDataToLine(fp, &StartRange, Counts);
           
           Counts = 0U; 
           StartRange = this->ChargeArray[Index + 1];
