@@ -41,7 +41,7 @@ class CCheckSeq
         }
       }
     }
-    void FindSeqencesAndLog(FILE* fp) 
+    void FindSeqencesAndLog(FILE* fp, FileIOStub file) 
     {
       unsigned int StartRange = 0U;
       unsigned int EndRange = 0U;
@@ -56,9 +56,9 @@ class CCheckSeq
           SeqStartEnd_t SeqStartEnd = {0};
           EndRange = this->ChargeArray[Index];
           SeqStartEnd.start = StartRange;
-          StartRange.end = EndRange;
+          SeqStartEnd.end = EndRange;
           //Call the file IO operation 
-          FileIOStub::WriteDataToLine(fp, &StartRange, Counts);
+          file.WriteDataToLine(fp, &StartRange, Counts);
           
           Counts = 0U; 
           StartRange = this->ChargeArray[Index + 1];
