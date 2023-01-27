@@ -11,7 +11,7 @@ class FileIO
 {
   private:
   public:
-    static bool ValFPAndCreateCSVFile(FILE *fp)
+    virual bool ValFPAndCreateCSVFile(FILE *fp)
     {
       fp = fopen("log.csv","w+t"); 
       if(fp== NULL)
@@ -26,11 +26,11 @@ class FileIO
         return 1;
       }
     }
-    static void CloseFile(FILE *fp)
+    virtual void CloseFile(FILE *fp)
     {
       fclose(fp);
     }
-    static void WriteDataToLine(FILE* fp,const CCheckSeq::SeqStartEnd_t& SeqStarEnd,const unsigned int count)
+    virtual void WriteDataToLine(FILE* fp,const CCheckSeq::SeqStartEnd_t& SeqStarEnd,const unsigned int count)
     {
       char Range[20]={"\0"};
       char Reading[8]={"\0"};
