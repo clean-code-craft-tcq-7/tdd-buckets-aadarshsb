@@ -9,6 +9,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: Install lizard
+      run: pip install lizard
 
-    - name: all entries made
-      run: bash ./.github/workflows/check-complete.sh
+    - name: Limit complexity
+      run: $HOME/.local/bin/lizard --CCN 4
+
+    - name: Check size
+      run: |
+        $HOME/.local/bin/lizard | bash .github/workflows/check_ccn.sh 100
+        
+    - name: compile the code 
+      run: gcc -Wall -Wextra -o tdd_buckets -g *.c
+      
+    - name: run
+      run: ./tdd_buckets
