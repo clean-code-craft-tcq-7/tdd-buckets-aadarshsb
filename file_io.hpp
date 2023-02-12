@@ -10,7 +10,21 @@ using namespace std;
 class FileIO
 {
   private:
+    FILE *fp;
   public:
+    FileIO(void) : fp(fopen("log.csv","w+t"))
+    {
+      //fp = fopen("log.csv","w+t"); 
+      if(fp== NULL)
+      {
+        printf("File pointer can't be created \n");
+      }
+      else
+      {
+        printf("File created Successfully \n");
+        fputs("Range  Readings \n",fp);
+      }
+    }
     bool ValFPAndCreateCSVFile(FILE *fp)
     {
       fp = fopen("log.csv","w+t"); 
