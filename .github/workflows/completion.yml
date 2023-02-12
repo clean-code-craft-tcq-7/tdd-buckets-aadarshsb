@@ -21,7 +21,7 @@ jobs:
         $HOME/.local/bin/lizard | bash .github/workflows/check_ccn.sh 100
         
     - name: compile the code 
-      run: g++ -Wall -Wextra -o tdd_buckets *.c*
+      run: gcc -Wall -Wextra -o tdd_buckets -g *.c
       
     - name: run
       run: ./tdd_buckets
