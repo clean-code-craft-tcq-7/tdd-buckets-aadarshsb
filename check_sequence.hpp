@@ -41,7 +41,7 @@ class CCheckSeq
         }
       }
     }
-    void FindSeqencesAndLog(FILE* fp, FileIOStub &file) 
+    void FindSeqencesAndLog(FILE* fp,class FileIOStub &file) 
     {
       unsigned int StartRange = 0U;
       unsigned int EndRange = 0U;
