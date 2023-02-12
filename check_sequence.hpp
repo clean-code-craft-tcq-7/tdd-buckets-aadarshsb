@@ -41,7 +41,7 @@ class CCheckSeq
         }
       }
     }
-    void FindSeqencesAndLog(FILE* fp, FileIOStub file) 
+    void FindSeqencesAndLog(FILE* fp, FileIOStub &file) 
     {
       unsigned int StartRange = 0U;
       unsigned int EndRange = 0U;
@@ -53,12 +53,12 @@ class CCheckSeq
         Counts++;
         if(ChargeArray[Index + 1] >= ChargeArray[Index] + 2)
         {
-          SeqStartEnd_t SeqStartEnd = {0};
+          SeqStartEnd_t SeqStartEnd;
           EndRange = this->ChargeArray[Index];
           SeqStartEnd.start = StartRange;
           SeqStartEnd.end = EndRange;
           //Call the file IO operation 
-          file.WriteDataToLine(fp, &StartRange, Counts);
+          file.WriteDataToLine(fp, &SeqStartEnd, Counts);
           
           Counts = 0U; 
           StartRange = this->ChargeArray[Index + 1];
